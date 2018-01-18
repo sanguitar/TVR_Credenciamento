@@ -1,0 +1,80 @@
+﻿@model IEnumerable<WebApplication2.Models.credenciamento>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table" align="center">
+    <tr>
+
+        <th>
+            @Html.DisplayNameFor(model => model.cpf)
+        </th>
+
+
+        <th>
+            @Html.DisplayNameFor(model => model.nome)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.convite)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.premio)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.OK)
+        </th>
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.cpf)
+
+            </td>
+
+
+            <td>
+                @Html.DisplayFor(modelItem => item.nome)
+
+            </td>
+
+
+            <td>
+                @Html.DisplayFor(modelItem => item.convite)
+
+            </td>
+
+
+            <td>
+                @Html.DisplayFor(modelItem => item.premio)
+
+            </td>
+
+
+            <td>
+                @Html.DisplayFor(modelItem => item.OK)
+
+            </td>
+        
+          
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.cpf }) |
+                @Html.ActionLink("Details", "Details", new { id = item.cpf }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.cpf })
+            </td>
+        </tr>
+    }
+
+</table>
